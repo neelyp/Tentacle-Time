@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca3luo2u0rhpm"]
+
+[ext_resource type="Texture2D" uid="uid://cgvjf3co4lr6e" path="res://imgs/menu.jpg" id="1_5iqul"]
+[ext_resource type="Script" path="res://Scripts/Play_Button.gd" id="2_p65rs"]
+
+[node name="Menu" type="CanvasLayer"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 9.0
+offset_right = 2000.0
+offset_bottom = 997.0
+texture = ExtResource("1_5iqul")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -11.5
+offset_right = 56.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Tentacle Time!"
+
+[node name="Play Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 38.0
+offset_right = 21.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+script = ExtResource("2_p65rs")
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="Play Button" to="Play Button" method="_on_pressed"]
