@@ -187,6 +187,8 @@ script = ExtResource("1_ddybc")
 metadata/_edit_group_ = true
 
 [node name="octopus" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.90735e-06, 0)
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_7tass")
 animation = &"death"
 frame_progress = 0.624706
@@ -194,3 +196,6 @@ frame_progress = 0.624706
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jbcfe")
 metadata/_edit_group_ = true
+
+[node name="shootPoint" type="Marker2D" parent="."]
+position = Vector2(8.2, 0)

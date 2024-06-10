@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bhggdh7a5wjsq"]
 
-[ext_resource type="Script" path="res://Scenes/Turtle.gd" id="1_q6plt"]
+[ext_resource type="Script" path="res://Scripts/Turtle.gd" id="1_q6plt"]
 [ext_resource type="Texture2D" uid="uid://bbid2esetwidv" path="res://imgs/Enemies/turtle/Attack.png" id="2_g7ssj"]
 [ext_resource type="Texture2D" uid="uid://csix5rqkhdu3d" path="res://imgs/Enemies/turtle/Death.png" id="3_g5nfj"]
 [ext_resource type="Texture2D" uid="uid://b6iibcnf2mekw" path="res://imgs/Enemies/turtle/Hurt.png" id="4_4lto7"]
@@ -170,19 +170,20 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jorru"]
+radius = 34.0
+height = 146.0
 
-[node name="Turtle" type="RigidBody2D"]
-position = Vector2(200, 154)
-mass = 0.01
-gravity_scale = 0.0
+[node name="Turtle" type="Area2D"]
 script = ExtResource("1_q6plt")
 
 [node name="turtle" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 154)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ekom5")
 animation = &"attack"
 frame_progress = 0.494998
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(200, 154)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jorru")
