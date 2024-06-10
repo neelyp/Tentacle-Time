@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://qsi0uttv3o2v"]
+[gd_scene load_steps=4 format=3 uid="uid://qsi0uttv3o2v"]
 
 [ext_resource type="PackedScene" uid="uid://cqvgquvs0dc3h" path="res://Scenes/Player.tscn" id="1_0u5go"]
-[ext_resource type="Texture2D" uid="uid://1vbgpeb0xesm" path="res://imgs/scene1.jpeg" id="1_qhbd0"]
+[ext_resource type="Texture2D" uid="uid://clkk1s3gcvyjt" path="res://imgs/level1.png" id="1_djmmd"]
+[ext_resource type="PackedScene" uid="uid://bhggdh7a5wjsq" path="res://Scenes/Turtle.tscn" id="3_ptmvv"]
 
 [node name="Level_1" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-offset_right = 2000.0
-offset_bottom = 1000.0
-texture = ExtResource("1_qhbd0")
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1151.0
+offset_bottom = 647.0
+texture = ExtResource("1_djmmd")
+expand_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_0u5go")]
+
+[node name="Turtle" parent="." instance=ExtResource("3_ptmvv")]
+position = Vector2(453, 249)

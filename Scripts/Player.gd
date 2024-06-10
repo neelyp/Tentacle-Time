@@ -37,12 +37,10 @@ func _physics_process(delta):
 	if chkAction("stop_move"):
 		velocity.x = 0
 		velocity.y = 0
-	#if chkAction("attack"):
-		#$octopus.play("attack")
 	
 	position += velocity * delta
 
-	# You may want to limit the velocity to prevent the octopus from moving too fast
+	
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	
@@ -53,6 +51,18 @@ func _physics_process(delta):
 	#play idle when not moving
 	if not is_moving:
 		$octopus.play("idle")
+
+func _input(event):
+	if chkAction("attack"):
+		shoot_projectile(get_global_mouse_position())
+		
+
+func shoot_projectile(target_position):
+	var direction = (target_position - position).normalized()
+	var projectile = load("res://Scenes/Ink.tscn").instantiate()
+	add_child(projectile)
+	projectile.position = position
+	projectile.linear_velocity = direction * 500
 
 func take_damage(dmg):
 	health -= dmg
