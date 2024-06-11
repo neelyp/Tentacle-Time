@@ -15,6 +15,7 @@ texture = ExtResource("1_djmmd")
 expand_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_0u5go")]
+position = Vector2(131, 113)
 
 [node name="Turtle" parent="." instance=ExtResource("3_ptmvv")]
 position = Vector2(453, 249)

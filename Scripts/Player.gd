@@ -28,12 +28,12 @@ func _physics_process(delta):
 		velocity.x += SPEED * delta
 		octopus.play("move_horizontal")
 		octopus.flip_h = false
-		shootPoint.position.x = abs(shootPoint.position.x)
+		GameSignals.emit_signal("flip_ink", true)
 	if chkAction("move_left"):
 		velocity.x -= SPEED * delta
 		octopus.play("move_horizontal")
 		octopus.flip_h = true
-		shootPoint.global_position.x *= 1
+		GameSignals.emit_signal("flip_ink", false)
 	if chkAction("move_up"):
 		velocity.y -= SPEED * delta
 		octopus.play("move_vertical")
@@ -47,6 +47,7 @@ func _physics_process(delta):
 		velocity.y = 0
 	
 	position += velocity * delta
+	$shootPoint.position = position
 	
 	if Input.is_action_pressed("attack") and rel:
 		var ink = INK.instantiate()

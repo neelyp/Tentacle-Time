@@ -6,6 +6,6 @@ var speed = 100.0  # adjust this value to control the enemy's speed
 func _ready():
 	player = $"../Player"
 
-func _physics_process(delta):
-	var direction = (player.position - position).normalized()
-	position += (direction * speed) * delta
+func _process(delta):
+	
+	position += position.direction_to(player.position) * speed * delta
