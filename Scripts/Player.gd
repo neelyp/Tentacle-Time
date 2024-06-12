@@ -19,6 +19,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	octopus = $octopus
 	shootPoint = $shootPoint
+	GameSignals.death.connect(self.die)
 
 func _physics_process(delta):
 	var is_moving
@@ -69,10 +70,7 @@ func _physics_process(delta):
 		octopus.play("idle")
 
 
-func take_damage(dmg):
-	health -= dmg
-	
-	if health > 0:
-		octopus.play("damage")
-	else:
-		octopus.play("death")
+func die():
+	print("die")
+	octopus.play("death")
+	get_tree().change_scene_to_file("res://Scenes/Die.tscn")

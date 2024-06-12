@@ -21,5 +21,5 @@ func _process(delta):
 		queue_free()
 
 func _on_flip_ink(dir):
-	print(dir)
 	direction = dir
+

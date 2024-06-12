@@ -7,10 +7,10 @@
 [node name="Level_1" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 1151.0
-offset_bottom = 647.0
+offset_left = -8.0
+offset_top = -2.0
+offset_right = 1164.0
+offset_bottom = 662.0
 texture = ExtResource("1_djmmd")
 expand_mode = 1
 
@@ -18,4 +18,13 @@ expand_mode = 1
 position = Vector2(131, 113)
 
 [node name="Turtle" parent="." instance=ExtResource("3_ptmvv")]
-position = Vector2(453, 249)
+position = Vector2(393, 315)
+
+[node name="Turtle2" parent="." instance=ExtResource("3_ptmvv")]
+position = Vector2(723, 326)
+
+[node name="Turtle3" parent="." instance=ExtResource("3_ptmvv")]
+position = Vector2(585, 58)
+
+[node name="Turtle4" parent="." instance=ExtResource("3_ptmvv")]
+position = Vector2(129, 307)
